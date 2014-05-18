@@ -3,16 +3,24 @@
 
 ## Loading and preprocessing the data
 
-
-
+```{r}
+setwd("/Users/rodolfofernandez/Desktop/RepData_PeerAssessment1")
+act.data <- read.csv("activity.csv")
+names(act.data)
+head(act.data)
+summary(act.data)
+#process dates
+library(lubridate)   
+act.data$date <- ymd(act.data$date)
+```
 ## What is mean total number of steps taken per day?
-
-
-
+```{r}
+mean(act.data$steps, na.rm = T)
+```
 ## What is the average daily activity pattern?
-
-
-
+```{r}
+mean(tapply(act.data$steps , act.data$date, mean, na.rm = T), na.rm=T)
+```
 ## Imputing missing values
 
 
