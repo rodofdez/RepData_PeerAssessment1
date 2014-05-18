@@ -77,12 +77,12 @@ median(tapply(act.data$steps, act.data$date, sum, na.rm = T), na.rm = T)
 ## What is the average daily activity pattern?
 
 ```r
-mean(tapply(act.data$steps, act.data$date, mean, na.rm = T), na.rm = T)
+avg.ints <- tapply(act.data$steps, act.data$interval, mean, na.rm = T)
+plot(as.numeric(rownames(avg.ints)), avg.ints, type = "l", lwd = 2, col = "blue", 
+    main = "Average interval steps across all days", xlab = "Interval")
 ```
 
-```
-## [1] 37.38
-```
+![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
 
 ## Imputing missing values
 
