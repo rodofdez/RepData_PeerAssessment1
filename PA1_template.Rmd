@@ -24,6 +24,10 @@ median(tapply(act.data$steps , act.data$date, sum, na.rm = T), na.rm=T)
 avg.ints <- tapply(act.data$steps , act.data$interval, mean, na.rm = T)
 plot(as.numeric(rownames(avg.ints)), avg.ints, type = "l", lwd = 2, col = "blue", main = "Average interval steps across all days", xlab = "Interval")
 ```
+##Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
+```{r}
+names(avg.ints[which.max(avg.ints)])
+```
 ## Imputing missing values
 
 

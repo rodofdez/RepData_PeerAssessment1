@@ -84,6 +84,16 @@ plot(as.numeric(rownames(avg.ints)), avg.ints, type = "l", lwd = 2, col = "blue"
 
 ![plot of chunk unnamed-chunk-3](figure/unnamed-chunk-3.png) 
 
+##Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
+
+```r
+names(avg.ints[which.max(avg.ints)])
+```
+
+```
+## [1] "835"
+```
+
 ## Imputing missing values
 
 
