@@ -15,7 +15,9 @@ act.data$date <- ymd(act.data$date)
 ```
 ## What is mean total number of steps taken per day?
 ```{r}
-mean(act.data$steps, na.rm = T)
+hist(tapply(act.data$steps , act.data$date, sum, na.rm = T), col = "purple", xlab="Total steps per day", main = "Hist of total steps per day")
+mean(tapply(act.data$steps , act.data$date, sum, na.rm = T), na.rm=T)
+median(tapply(act.data$steps , act.data$date, sum, na.rm = T), na.rm=T)
 ```
 ## What is the average daily activity pattern?
 ```{r}
